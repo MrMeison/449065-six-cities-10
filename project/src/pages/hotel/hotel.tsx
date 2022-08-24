@@ -9,7 +9,6 @@ import { Offer } from '../../types/offer';
 import { ReviewType } from '../../types/reviewType';
 import { Location } from '../../types/offer';
 import { useState } from 'react';
-import { State } from '../../types/state';
 
 type HotelProps = {
   offers: Offer[],
@@ -83,7 +82,7 @@ function Hotel({offers, reviews, nearPlaces}: HotelProps): JSX.Element {
                   <span className="visually-hidden">Rating</span>
                 </div>
                 <span className="property__rating-value rating__value">
-                {currentOffer?.rating}
+                  {currentOffer?.rating}
                 </span>
               </div>
               <ul className="property__features">
@@ -91,7 +90,7 @@ function Hotel({offers, reviews, nearPlaces}: HotelProps): JSX.Element {
                   {currentOffer?.type}
                 </li>
                 <li className="property__feature property__feature--bedrooms">
-                {currentOffer?.bedrooms}
+                  {currentOffer?.bedrooms}
                 </li>
                 <li className="property__feature property__feature--adults">
                   Max {currentOffer?.maxAdults} adults
@@ -104,7 +103,8 @@ function Hotel({offers, reviews, nearPlaces}: HotelProps): JSX.Element {
               <div className="property__inside">
                 <h2 className="property__inside-title">What&apos;s inside</h2>
                 <ul className="property__inside-list">
-                {currentOffer?.goods.map((item, index) => (<li key={index} className="property__inside-item">{item}</li>))}
+                  {/* eslint-disable-next-line */}
+                  {currentOffer?.goods.map((item, index) => (<li key={index} className="property__inside-item">{item}</li>))}
                 </ul>
               </div>
               <div className="property__host">
