@@ -12,7 +12,7 @@ export enum Action {
   CurrentHotel = 'CURRENT_HOTEL',
 }
 
-// export const getOffers = createAction('offers');
+
 export const changeCurrentCity = createAction(Action.ChangeCurrentCity, (city: City) => ({
   payload: city,
 }));

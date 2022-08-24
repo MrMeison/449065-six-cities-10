@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
-import { MouseEvent } from 'react';
 
 type PlaceProps = {
   previewImage: string;
@@ -11,14 +10,16 @@ type PlaceProps = {
   active: boolean;
   rating: number;
   id: number;
-  setActiveOffer: (evt: MouseEvent<HTMLElement>) => void;
 }
 
-function Place({previewImage, title, price, type, isPremium, active, rating, id, setActiveOffer}: PlaceProps): JSX.Element {
+function Place({previewImage, title, price, type, isPremium, active, rating, id}: PlaceProps): JSX.Element {
 
-  const ratingWidth = rating * 100 / 5;
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const onHoverCard = () => {
+  };
+
   return (
-    <article className="cities__card place-card" onMouseOver={setActiveOffer}>
+    <article className="cities__card place-card" onMouseOver={onHoverCard}>
       {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`${AppRoute.Room}/:${id}`}>
@@ -49,7 +50,7 @@ function Place({previewImage, title, price, type, isPremium, active, rating, id,
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${ratingWidth}%`}}></span>
+            <span style={{width: `${rating * 100 / 5}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>

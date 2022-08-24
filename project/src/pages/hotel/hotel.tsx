@@ -26,15 +26,6 @@ function Hotel({offers, reviews, nearPlaces}: HotelProps): JSX.Element {
 
   const [selectedLocation, setSelectedLocation] = useState<Location | undefined>(undefined);
 
-  const OfferPlaceHover = (hoveredOffer: number | null) => {
-    const selectedOffer = useAppSelector((state) => state.offers.find((offer) => offer.id === hoveredOffer));
-    if (hoveredOffer === null) {
-      setSelectedLocation(undefined);
-    } else {
-      selectedOffer?.location;
-    }
-  };
-
   return (
     <div className="page">
       <Header />
@@ -43,6 +34,7 @@ function Hotel({offers, reviews, nearPlaces}: HotelProps): JSX.Element {
           <div className="property__gallery-container container">
             <div className="property__gallery">
               {currentOffer?.images.map((item, index) => (
+                // eslint-disable-next-line react/no-array-index-key
                 <div key={index} className="property__image-wrapper">
                   <img
                     className="property__image"
@@ -145,7 +137,7 @@ function Hotel({offers, reviews, nearPlaces}: HotelProps): JSX.Element {
               Other places in the neighbourhood
             </h2>
             <div className="near-places__list places__list">
-              <PlaceList offers={offers} OfferPlaceHover={OfferPlaceHover} />
+              <PlaceList offers={offers} />
             </div>
           </section>
         </div>
