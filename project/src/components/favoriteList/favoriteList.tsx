@@ -12,7 +12,7 @@ function FavoriteList({favoriteOffers}: FavoriteListProps): JSX.Element {
 
   return (
     <div className="favorites__places">
-      {favoriteOffers.map((item) => <Favorite key={item.id} img={item.img} type={item.type} price={item.price} name={item.name} premium={item.premium} active={item.active} rating={item.rating} id={item.id} setActiveOffer={() => setActiveOffer(item)} />)}
+      {favoriteOffers.map((item) => <Favorite key={item.id} img={item.img} type={item.type} price={item.price} name={item.name} isPremium={item.isPremium} active={item.active} rating={item.rating} id={item.id} setActiveOffer={() => setActiveOffer(item)} />)}
     </div>
   );
 }

@@ -3,6 +3,7 @@ const cities = [
     location: {
       latitude: 52.370216,
       longitude: 4.895168,
+      zoom: 13,
     },
     name: 'Paris',
   },
@@ -10,6 +11,7 @@ const cities = [
     location: {
       latitude: 52.370216,
       longitude: 4.895168,
+      zoom: 13,
     },
     name: 'Cologne',
   },
@@ -17,6 +19,7 @@ const cities = [
     location: {
       latitude: 52.370216,
       longitude: 4.895168,
+      zoom: 13,
     },
     name: 'Brussels',
   },
@@ -24,6 +27,7 @@ const cities = [
     location: {
       latitude: 52.370216,
       longitude: 4.895168,
+      zoom: 13,
     },
     name: 'Amsterdam',
   },
@@ -31,6 +35,7 @@ const cities = [
     location: {
       latitude: 52.370216,
       longitude: 4.895168,
+      zoom: 13,
     },
     name: 'Hamburg',
   },
@@ -38,6 +43,7 @@ const cities = [
     location: {
       latitude: 52.370216,
       longitude: 4.895168,
+      zoom: 13,
     },
     name: 'Dusseldorf',
   },

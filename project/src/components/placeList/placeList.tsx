@@ -8,7 +8,7 @@ type PlaceListProps = {
 }
 
 function PlaceList({offers, OfferPlaceHover}: PlaceListProps): JSX.Element {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line
   const [activeOffer, setActiveOffer] = useState({});
 
   return (

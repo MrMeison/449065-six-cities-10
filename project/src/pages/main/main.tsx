@@ -14,7 +14,7 @@ const citySelector = (state: State) => state.city;
 const filterSelector = (state: State) => state.currentFilter;
 
 const offersSelector = (state: State) => (
-  state.offers.filter((offer) => offer.city === state.city.name)
+  state.offers.filter((offer) => offer.city.name === state.city.name)
     .sort((a, b) => {
       if (state.currentFilter === 'Price: low to high') {
         return a.price - b.price;

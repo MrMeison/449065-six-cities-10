@@ -17,9 +17,20 @@ export interface Place {
   name: string,
   price: number,
   type: string,
-  premium: boolean,
+  isPremium: boolean,
   active: boolean,
   stars: string
 }
 
 export type Places = Place[]
+
+export enum APIRoute {
+  Offers = '/hotels',
+  Hotel = '/hotels/{hotelId}',
+  Nearby = '/hotels/{hotelId}/nearby',
+  Favorite = '/favorite',
+  FavoriteChange = '/favorite/{hotelId}/{status}',
+  Comments = '/comments',
+  Login = '/login',
+  Logout = '/logout'
+}

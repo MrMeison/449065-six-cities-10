@@ -3,24 +3,26 @@ import { AppRoute } from '../../const';
 import { MouseEvent } from 'react';
 
 type PlaceProps = {
-  img: string;
-  name: string;
+  previewImage: string;
+  title: string;
   price: number;
   type: string;
-  premium: boolean;
+  isPremium: boolean;
   active: boolean;
   rating: number;
   id: number;
   setActiveOffer: (evt: MouseEvent<HTMLElement>) => void;
 }
 
-function Place({img, name, price, type, premium, active, rating, id, setActiveOffer}: PlaceProps): JSX.Element {
+function Place({previewImage, title, price, type, isPremium, active, rating, id, setActiveOffer}: PlaceProps): JSX.Element {
+
+  const ratingWidth = rating*100/5;
   return (
     <article className="cities__card place-card" onMouseOver={setActiveOffer}>
-      {premium && <div className="place-card__mark"><span>Premium</span></div>}
+      {isPremium && <div className="place-card__mark"><span>Premium</span></div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`${AppRoute.Room}/:${id}`}>
-          <img className="place-card__image" src={img} width="260" height="200" alt="Place image"/>
+          <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image"/>
         </Link>
       </div>
       <div className="place-card__info">
@@ -47,12 +49,12 @@ function Place({img, name, price, type, premium, active, rating, id, setActiveOf
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${rating}%`}}></span>
+            <span style={{width: `${ratingWidth}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`${AppRoute.Room}/:${id}`}>{name}</Link>
+          <Link to={`${AppRoute.Room}/:${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

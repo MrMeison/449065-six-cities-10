@@ -7,17 +7,17 @@ type FavoriteProps = {
   name: string;
   price: number;
   type: string;
-  premium: boolean;
+  isPremium: boolean;
   active: boolean;
   rating: number;
   id: number;
   setActiveOffer: (evt: MouseEvent<HTMLElement>) => void;
 }
 
-function Favorite({img, name, price, type, premium, active, rating, id, setActiveOffer}: FavoriteProps): JSX.Element {
+function Favorite({img, name, price, type, isPremium, active, rating, id, setActiveOffer}: FavoriteProps): JSX.Element {
   return (
     <article className="favorites__card place-card" onMouseOver={setActiveOffer}>
-      {premium ? <div className="place-card__mark"><span>Premium</span></div> : ''}
+      {isPremium ? <div className="place-card__mark"><span>Premium</span></div> : ''}
       <div className="favorites__image-wrapper place-card__image-wrapper">
         <Link to={'/'}><img className="place-card__image" src={img} width="150" height="110" alt="Place image" /></Link>
       </div>
