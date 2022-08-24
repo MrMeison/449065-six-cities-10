@@ -24,7 +24,7 @@ function Hotel({offers, reviews, nearPlaces}: HotelProps): JSX.Element {
 
   const currentOffer = offers.find((item) => item.id === Number(id));
 
-  const [selectedLocation, setSelectedLocation] = useState<Location | undefined>(undefined);
+  const [selectedLocation] = useState<Location | undefined>(undefined);
 
   return (
     <div className="page">
